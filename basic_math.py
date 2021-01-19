@@ -91,10 +91,14 @@ def get_median(number_list):
             35.5
     """
     length = len(number_list)
-
+    number_list.sort()
     if length % 2 == 1:
-        median = number_list[(length - 1) / 2]
+        median = number_list[(length - 1) // 2]
     else:
-        median = (number_list[(length - 1) / 2] +
-                  number_list[(length + 1) / 2]) / 2
+        median = (number_list[(length - 1) // 2]
+                  + number_list[(length + 1) // 2]) / 2
     return median
+
+
+if __name__ == "__main__":
+    print(get_median([1, 2, 4, 3, 4]))
